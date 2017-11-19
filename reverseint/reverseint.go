@@ -37,7 +37,7 @@ func reverseInt(v int) int {
 	revValue, _ := strconv.Atoi(revValueStr)
 
 	if isNegative {
-		revValue = -revValue
+		revValue = revValue * -1
 	}
 
 	return revValue
