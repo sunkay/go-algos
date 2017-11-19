@@ -1,12 +1,7 @@
 package main
 
 func palindrome(str string) bool {
-	r := reverse(str)
-	if r == str {
-		return true
-	}
-
-	return false
+	return str == reverse(str)
 }
 
 func reverse(str string) string {
