@@ -11,3 +11,12 @@ func reverse(str string) string {
 	}
 	return revstr
 }
+
+func palindromeArray(str string) bool {
+	for index := 0; index < len(str)/2; index++ {
+		if str[index] != str[len(str)-index-1] {
+			return false
+		}
+	}
+	return true
+}
