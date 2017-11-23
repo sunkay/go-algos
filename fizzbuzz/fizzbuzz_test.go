@@ -5,7 +5,7 @@ import (
 )
 
 func TestFizzBuzz15(t *testing.T) {
-	r := fizzBuzz(10)
+	r := fizzBuzz(15)
 
 	if r[0] != 1 {
 		t.Errorf("Expected r[0] to be 1 but got %v", r[0])
@@ -36,6 +36,9 @@ func TestFizzBuzz15(t *testing.T) {
 	}
 	if r[9] != "buzz" {
 		t.Errorf("Expected r[9] to be fizz but got %v", r[9])
+	}
+	if r[14] != "fizzbuzz" {
+		t.Errorf("Expected r[14] to be fizzbuzz but got %v", r[14])
 	}
 
 }

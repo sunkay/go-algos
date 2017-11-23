@@ -18,7 +18,9 @@ func fizzBuzz(count int) []interface{} {
 	var r []interface{}
 
 	for i := 0; i < count; i++ {
-		if (i+1)%3 == 0 {
+		if (i+1)%3 == 0 && (i+1)%5 == 0 {
+			r = append(r, "fizzbuzz")
+		} else if (i+1)%3 == 0 {
 			r = append(r, "fizz")
 		} else if (i+1)%5 == 0 {
 			r = append(r, "buzz")
