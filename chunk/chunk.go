@@ -1,5 +1,7 @@
 package chunk
 
+import "fmt"
+
 // --- Directions
 // Given an array and chunk size, divide the array into many subarrays
 // where each subarray is of length size
@@ -12,7 +14,28 @@ package chunk
 
 func chunk(arr []int, size int) [][]int {
 
-	result := [][]int{{1, 2}, {3, 4}}
+	result := [][]int{}
+
+	arrLen := len(arr)
+	numChunks := 0
+	if arrLen%size == 0 {
+		numChunks = arrLen / size
+	} else {
+		numChunks = (arrLen / size) + 1
+	}
+
+	fmt.Printf("NumChunks: %v\n", numChunks)
+	index := 0
+	for i := 0; i < numChunks; i++ {
+		slice := []int{}
+
+		for j := 0; j < size && index < len(arr); j++ {
+			slice = append(slice, arr[index])
+			index++
+		}
+
+		result = append(result, slice)
+	}
 
 	return result
 }

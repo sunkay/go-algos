@@ -27,6 +27,6 @@ func TestChunk13Size5(t *testing.T) {
 
 func compareSlices(a [][]int, b [][]int, t *testing.T) {
 	if !reflect.DeepEqual(a, b) {
-		t.Errorf("Expected %v, but got %v", a, b)
+		t.Errorf("Expected %v, but got %v", b, a)
 	}
 }
