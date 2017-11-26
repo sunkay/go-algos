@@ -1,5 +1,9 @@
 package anagrams
 
+import (
+	"regexp"
+)
+
 // --- Directions
 // Check to see if two provided strings are anagrams of eachother.
 // One string is an anagram of another if it uses the same characters
@@ -12,5 +16,32 @@ package anagrams
 
 func anagram(strA string, strB string) bool {
 
+	//`Compile` an optimized `Regexp` struct alphanumeric
+	reg, _ := regexp.Compile("[^a-zA-Z0-9]+")
+
+	charMapA := charMap(reg.ReplaceAllString(strA, ""))
+	charMapB := charMap(reg.ReplaceAllString(strB, ""))
+
+	// check lengths of 2 charMaps
+	if len(charMapA) != len(charMapB) {
+		return false
+	}
+
+	for ak, av := range charMapA {
+		if av != charMapB[ak] {
+			return false
+		}
+	}
+
 	return true
+}
+
+func charMap(str string) map[rune]int {
+	r := make(map[rune]int)
+
+	for _, c := range str {
+		r[c] = r[c] + 1
+	}
+
+	return r
 }
