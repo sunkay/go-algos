@@ -2,6 +2,8 @@ package anagrams
 
 import (
 	"regexp"
+	"sort"
+	"strings"
 )
 
 // --- Directions
@@ -34,6 +36,26 @@ func anagram(strA string, strB string) bool {
 	}
 
 	return true
+}
+
+func anagramSortSolution(strA string, strB string) bool {
+	//`Compile` an optimized `Regexp` struct alphanumeric
+	reg, _ := regexp.Compile("[^a-zA-Z0-9]+")
+
+	// convert string to byte array
+	sortedA := sortString(reg.ReplaceAllString(strA, ""))
+	sortedB := sortString(reg.ReplaceAllString(strB, ""))
+
+	if sortedA != sortedB {
+		return false
+	}
+	return true
+}
+
+func sortString(w string) string {
+	s := strings.Split(w, "")
+	sort.Strings(s)
+	return strings.Join(s, "")
 }
 
 func charMap(str string) map[rune]int {

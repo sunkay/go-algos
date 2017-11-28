@@ -23,8 +23,13 @@ func TestAnaPunctuation(t *testing.T) {
 }
 
 func testAnagram(strA string, strB string, expected bool, t *testing.T) {
-	r := anagram(strA, strB)
+	r := anagramSortSolution(strA, strB)
 	if r != expected {
 		t.Errorf("strA: %v, strB: %v, Expected %v, but got %v", strA, strB, expected, r)
+	}
+
+	r1 := anagram(strA, strB)
+	if r1 != expected {
+		t.Errorf("strA: %v, strB: %v, Expected %v, but got %v", strA, strB, expected, r1)
 	}
 }
