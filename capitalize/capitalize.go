@@ -9,13 +9,11 @@
 
 package capitalize
 
+import (
+	"strings"
+)
+
 func capitalize(str string) string {
 
-	//`Compile` an optimized `Regexp` struct alphanumeric
-	//reg, _ := regexp.Compile("\b[a-zA-Z]")
-
-	return str
+	return strings.Title(str)
 }
-
-//Regexp word boundary first character
-//\b[a-zA-Z]
