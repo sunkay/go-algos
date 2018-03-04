@@ -24,11 +24,7 @@
 
 package steps
 
-import (
-	"fmt"
-)
-
-func steps(count int) []string {
+func stepsIter(count int) []string {
 	var steps []string
 
 	for i := 0; i < count; i++ {
@@ -40,9 +36,28 @@ func steps(count int) []string {
 				step += " "
 			}
 		}
-		fmt.Println(step)
 		steps = append(steps, step)
 	}
 
 	return steps
+}
+
+func stepsRecursive(count int, currentStep int, steps []string) []string {
+
+	if currentStep == count {
+		return steps
+	}
+
+	str := ""
+	for i := 0; i < count; i++ {
+		if currentStep >= i {
+			str += "#"
+		} else {
+			str += " "
+		}
+	}
+	//fmt.Fprintf(os.Stderr, "count=%d, currentStep:%d, str:%s\n", count, currentStep, str)
+
+	return stepsRecursive(count, currentStep+1, append(steps, str))
+
 }
