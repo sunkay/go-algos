@@ -16,7 +16,25 @@
 
 package pyramid
 
-func pyramid(count int) []string {
+import (
+	"math"
+)
 
-	return nil
+func pyramid(count int) []string {
+	var rows []string
+	midf := math.Floor(float64((count*2 - 1) / 2))
+	mid := int(midf)
+	for row := 0; row < count; row++ {
+		cols := ""
+		for col := 0; col < (count*2 - 1); col++ {
+			if mid-row <= col && mid+row >= col {
+				cols += "#"
+			} else {
+				cols += " "
+			}
+		}
+		rows = append(rows, cols)
+	}
+
+	return rows
 }

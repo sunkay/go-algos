@@ -27,13 +27,13 @@ func TestPyramid3(t *testing.T) {
 		t.Errorf("Expected length to be %v, but got %v", 3, len(steps))
 	}
 	if steps[0] != "  #  " {
-		t.Errorf("Expected step to be %v, but got %v", " # ", steps[0])
+		t.Errorf("Expected step to be %v, but got %v", "  #  ", steps[0])
 	}
 	if steps[1] != " ### " {
-		t.Errorf("Expected step to be %v, but got %v", "###", steps[1])
+		t.Errorf("Expected step to be %v, but got %v", " ### ", steps[1])
 	}
 	if steps[2] != "#####" {
-		t.Errorf("Expected step to be %v, but got %v", "###", steps[1])
+		t.Errorf("Expected step to be %v, but got %v", "#####", steps[2])
 	}
 }
 
@@ -45,15 +45,15 @@ func TestPyramid4(t *testing.T) {
 		t.Errorf("Expected length to be %v, but got %v", 4, len(steps))
 	}
 	if steps[0] != "   #   " {
-		t.Errorf("Expected step to be %v, but got %v", " # ", steps[0])
+		t.Errorf("Expected step to be %v, but got %v", "   #   ", steps[0])
 	}
 	if steps[1] != "  ###  " {
-		t.Errorf("Expected step to be %v, but got %v", "###", steps[1])
+		t.Errorf("Expected step to be %v, but got %v", "  ###  ", steps[1])
 	}
 	if steps[2] != " ##### " {
-		t.Errorf("Expected step to be %v, but got %v", "###", steps[1])
+		t.Errorf("Expected step to be %v, but got %v", "  #### ", steps[2])
 	}
 	if steps[3] != "#######" {
-		t.Errorf("Expected step to be %v, but got %v", "###", steps[1])
+		t.Errorf("Expected step to be %v, but got %v", "#######", steps[3])
 	}
 }
