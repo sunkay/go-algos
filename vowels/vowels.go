@@ -9,6 +9,12 @@
 
 package vowels
 
+import (
+	"regexp"
+)
+
 func vowels(str string) int {
-	return 4
+	r, _ := regexp.Compile("(a|e|i|o|u|A|E|I|O|U)")
+
+	return len(r.FindAllString(str, -1))
 }
